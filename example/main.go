@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gorilla/websocket"
-	radio "go-radio"
+	radio "github.com/haowanxing/go-radio"
 	"log"
 	"net/http"
 )

@@ -1,4 +1,4 @@
-module go-radio
+module github.com/haowanxing/go-radio
 
 go 1.13
 
