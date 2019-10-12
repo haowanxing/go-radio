@@ -39,6 +39,3 @@ func startManager() {
 		}
 	}
 }
-func Broadcast(msg Message) {
-	manager.broadcast <- msg
-}

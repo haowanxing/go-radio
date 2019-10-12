@@ -34,3 +34,6 @@ func NewClient(conn *websocket.Conn, receiveFn func(msg Message)) *client {
 	c.write()
 	return c
 }
+func Broadcast(msg Message) {
+	manager.broadcast <- msg
+}
