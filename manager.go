@@ -9,7 +9,7 @@ type clientManager struct {
 }
 
 var manager = clientManager{
-	broadcast:  make(chan Message, 2048),
+	broadcast:  make(chan Message),
 	register:   make(chan *client),
 	unregister: make(chan *client),
 	clients:    make(map[*client]bool),
