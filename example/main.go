@@ -27,7 +27,6 @@ func wsHandle(w http.ResponseWriter, r *http.Request) {
 		log.Print("upgrade:", err)
 		return
 	}
-	defer conn.Close()
 	radio.NewClient(conn, func(msg radio.Message) {
 		radio.Broadcast(msg)
 	})
