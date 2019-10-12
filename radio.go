@@ -26,7 +26,7 @@ func NewClient(conn *websocket.Conn, receiveFn func(msg Message)) *client {
 	var c = &client{
 		id:      xid.New().String(),
 		socket:  conn,
-		send:    make(chan Message),
+		send:    make(chan Message, 1024),
 		receive: receiveFn,
 	}
 	manager.register <- c
