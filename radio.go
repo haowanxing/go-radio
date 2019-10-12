@@ -31,7 +31,7 @@ func NewClient(conn *websocket.Conn, receiveFn func(msg Message)) *client {
 	}
 	manager.register <- c
 	go c.read()
-	c.write()
+	go c.write()
 	return c
 }
 func Broadcast(msg Message) {
