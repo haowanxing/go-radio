@@ -21,4 +21,5 @@ debug
 *.test
 *.pyc
 tmp
-go.mod
+/go.mod
+/go.sum
