@@ -21,3 +21,4 @@ debug
 *.test
 *.pyc
 tmp
+go.mod
