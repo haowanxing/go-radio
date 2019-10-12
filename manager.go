@@ -28,8 +28,8 @@ func startManager() {
 			log.Debugf("[Manager]（%s）加入服务器", c.id)
 		case c := <-manager.unregister:
 			if _, ok := manager.clients[c]; ok {
-				_ = c.Close()
 				delete(manager.clients, c)
+				_ = c.Close()
 			}
 		case msg := <-manager.broadcast:
 			log.Debugf("[Manager]广播信息：%v", msg)
