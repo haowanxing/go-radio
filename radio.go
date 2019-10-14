@@ -22,7 +22,7 @@ func Run() {
 
 // NewClient将Ws封装成client并注册到manager
 // receiveFn用于自定义处理客户端发送的数据
-func NewClient(conn *websocket.Conn, receiveFn func(msg Message)) *client {
+func NewClient(conn *websocket.Conn, receiveFn Receiver) *client {
 	var c = &client{
 		id:      xid.New().String(),
 		socket:  conn,

@@ -7,10 +7,11 @@ type client struct {
 	id      string
 	socket  *websocket.Conn
 	send    chan Message
-	receive func(message Message)
+	receive Receiver
 }
+type Receiver func(message Message)
 
-func (c *client) ChangeReceiveFunction(fn func(msg Message)) {
+func (c *client) ChangeReceiveFunction(fn Receiver) {
 	c.receive = fn
 }
 func (c *client) ChangeID(id string) {
